@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Blogging</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="add_blog.js"></script>
+    <!-- <script>
+       var loadFile = function(event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+        </script> -->
+</head>
+<body>
+  
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border:gray; border-width:1px; border-style:solid;">
+      <img id="output" width="50  " height="50" src="blog.png" />
+      <h1 align="center" style="color:#2B547E;font-family:verdana;font-size: 27px;">Simply Blogging</h1>
+  
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="about-us.html">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+     
+    </br>
+    <div class="container">
+    <div class="content">
+    <form role="form">
+      <div class="form-group">
+        <h3 align="center"> Create New Blog 
+          <img id="output" width="50  " height="50" src="blog1.png" />
+        </h3>
+       
+      </div>
+    <div class="form-group">
+      <label for="username" class="iconic user"  > Title :<span class="required"></span></label>
+      <input type="text" class="form-control" name="username" id="title"  required="required" placeholder="Enter Blog Title Here!">
+    </div>
+    <div class="form-group">
+      <label for="message" class="iconic comment"> Article : </label>
+      <textarea name="message"  id="article" class="form-control" rows="3" placeholder="Enter Blog Content Here!"  required="required"></textarea>
+    </div>
+    <!-- <div class="form-group">
+      <label for="image" class="iconic comment"> Add Image </label>
+      <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)">
+    </div> -->
+
+    <input type="button" value="Add Blog" class="btn btn-primary" onclick="addBlog()" onchange="loadFile()"/><br>
+    </form>
+    </div>
+    </div>
+   <h1 align="center">Our Blogs</h1>
+   <div class="red-border"></div>
+   <div class="red-border1"></div>
+            <div id="main">
+  
+                  <div class="card-body" id="card-body">
+                      <img id="output" width="200"/>
+                      <!-- <h5 class="card-title" id="card-title1"></h5>
+                      <p class="card-text" id="card-text1"></p>  -->
+        
+                  </div>
+              </div>
+
+</body>
+</html>
