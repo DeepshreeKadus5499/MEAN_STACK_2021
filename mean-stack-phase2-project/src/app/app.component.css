@@ -9,3 +9,21 @@ input[type="radio"].quiz-radio {
 .quiz-row {
   margin-top: 10px;
 }
+
+#startutton{
+  background-color: dodgerblue;
+  margin:auto;
+  display:block;
+  padding: 0.3cm;
+}
+
+#nextque{
+  background-color: cadetblue;
+}
+#option{
+  text-align:auto
+}
+
+#submitbtn{
+  background-color: dodgerblue;
+}

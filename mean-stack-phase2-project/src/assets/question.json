@@ -1,0 +1,123 @@
+[
+    {
+      "id": 1,
+      "question": "Question 1: Which of the below are reserved keyword in Java?",
+      "option": [
+        {"optionid": 1, "name": "array"},
+        {"optionid": 2, "name": "goto"},
+        {"optionid": 3, "name": "null"},
+        {"optionid": 4, "name": "int"}
+      ],
+      "answer": 2,
+      "selected": 0
+    }
+    ,
+       {
+         "id": 2,
+         "question": "Question 2: Which of the below are unchecked exceptions in java??",
+         "option": [
+           {"optionid": 1, "name": "RuntimeException"},
+           {"optionid": 2, "name": "ClassCastException"},
+           {"optionid": 3, "name": "NullPointerException"},
+           {"optionid": 4, "name": "IOException"}
+         ],
+         "answer": 1,
+         "selected": 0
+       },
+       {
+         "id": 3,
+         "question": "Question 3: Which is a valid keyword in java?",
+         "option": [
+           {"optionid": 1, "name": "interface"},
+           {"optionid": 2, "name": "string"},
+           {"optionid": 3, "name": "Float"},
+           {"optionid": 4, "name": "unsigned"}
+         ],
+         "answer": 1,
+         "selected": 0
+       },
+       {
+         "id": 4,
+         "question": "Question 4: Which is the valid declarations within an interface definition?",
+         "option": [
+           {"optionid": 1, "name": "public double methoda();"},
+           {"optionid": 2, "name": "public final double methoda();"},
+           {"optionid": 3, "name": "static void methoda(double d1);"},
+           {"optionid": 4, "name": "protected void methoda(double d1);"}
+         ],
+         "answer": 1,
+         "selected": 0
+       },
+       {
+         "id": 5,
+         "question": "Question 5: Which one is a valid declaration of a boolean?",
+         "option": [
+           {"optionid": 1, "name": "boolean b1 = 0;"},
+           {"optionid": 2, "name": "boolean b3 = false;"},
+           {"optionid": 3, "name": "boolean b5 = no;"},
+           {"optionid": 4, "name": "boolean b1 = 1;"}
+         ],
+         "answer": 2,
+         "selected": 0
+       },
+       {
+        "id": 6,
+        "question": "Question 6: Which is a valid declarations of a String?",
+        "option": [
+          {"optionid": 1, "name": "String s1 = null;"},
+          {"optionid": 2, "name": "String s3 = (String) abc;"},
+          {"optionid": 3, "name": "String s2 = 'null';"},
+          {"optionid": 4, "name": "String s4 = (String) '\ufeed';"}
+        ],
+        "answer": 1,
+        "selected": 0
+      },
+      {
+        "id": 7,
+        "question": "Question 7: What is the name of the method used to start a thread execution?",
+        "option": [
+          {"optionid": 1, "name": "init();"},
+          {"optionid": 2, "name": "start();"},
+          {"optionid": 3, "name": "run();"},
+          {"optionid": 4, "name": "resume();"}
+        ],
+        "answer": 2,
+        "selected": 0
+      },
+      {
+        "id": 8,
+        "question": "Question 8: Which cannot directly cause a thread to stop executing?",
+        "option": [
+          {"optionid": 1, "name": "Calling the SetPriority() method on a Thread object."},
+          {"optionid": 2, "name": "Calling the wait() method on an object."},
+          {"optionid": 3, "name": "Calling notify() method on an object."},
+          {"optionid": 4, "name": "Calling read() method on an InputStream object."}
+        ],
+        "answer": 3,
+        "selected": 0
+      },
+      {
+        "id": 9,
+        "question": "Question 9: Which of the following will directly stop the execution of a Thread?",
+        "option": [
+          {"optionid": 1, "name": "wait()"},
+          {"optionid": 2, "name": "notify()"},
+          {"optionid": 3, "name": "notifyall()"},
+          {"optionid": 4, "name": "exits synchronized code"}
+        ],
+        "answer": 1,
+        "selected": 0
+      },
+      {
+        "id": 10,
+        "question": "Question 10: Which method must be defined by a class implementing the java.lang.Runnable interface?",
+        "option": [
+          {"optionid": 1, "name": "void run()"},
+          {"optionid": 2, "name": "public void run()"},
+          {"optionid": 3, "name": "public void start()"},
+          {"optionid": 4, "name": "void run(int priority)"}
+        ],
+        "answer": 2,
+        "selected": 0
+      }
+     ]

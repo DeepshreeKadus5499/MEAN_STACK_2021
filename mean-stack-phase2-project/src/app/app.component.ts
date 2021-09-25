@@ -1,104 +1,44 @@
 import { Component } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Question } from './question';
+import { QuestionServiceService } from './question-service.service';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
- buttonName = "Start the Quiz";
- begin = false;
+ buttonName = "Start the Test";
+ start_test = false;
  complete = false;
- questions: any;
- currentQuestion: any;
- currentIndex: number;
- score: any;
+ currentQue: any;
+ currentIn: number;
+ marks: any;
  noAnswer: any;
 
- constructor(){
-   this.questions = [
-     {
-       id: 1,
-       question: 'Question 1: Which is the largest country in the world by population?',
-       option: [
-         {optionid: 1, name: 'India'},
-         {optionid: 2, name: 'USA'},
-         {optionid: 3, name: 'China'},
-         {optionid: 4, name: 'Russia'}
-       ],
-       answer: 3,
-       selected: 0
-     },
-     {
-       id: 2,
-       question: 'Question 2: When did the second world war end?',
-       option: [
-         {optionid: 1, name: '1945'},
-         {optionid: 2, name: '1939'},
-         {optionid: 3, name: '1944'},
-         {optionid: 4, name: '1942'}
-       ],
-       answer: 1,
-       selected: 0
-     },
-     {
-       id: 3,
-       question: 'Question 3: Which was the first country to issue paper currency?',
-       option: [
-         {optionid: 1, name: 'USA'},
-         {optionid: 2, name: 'France'},
-         {optionid: 3, name: 'Italy'},
-         {optionid: 4, name: 'China'}
-       ],
-       answer: 4,
-       selected: 0
-     },
-     {
-       id: 4,
-       question: 'Question 5: Which city hosted the 1996 Summer Olympics?',
-       option: [
-         {optionid: 1, name: 'Atlanta'},
-         {optionid: 2, name: 'Sydney'},
-         {optionid: 3, name: 'Athens'},
-         {optionid: 4, name: 'Beijing'}
-       ],
-       answer: 1,
-       selected: 0
-     },
-     {
-       id: 5,
-       question: 'Question 5: Who invented telephone?',
-       option: [
-         {optionid: 1, name: 'Albert Einstein'},
-         {optionid: 2, name: 'Alexander Graham Bell'},
-         {optionid: 3, name: 'Isaac Newton'},
-         {optionid: 4, name: 'Marie Curie'}
-       ],
-       answer: 2,
-       selected: 0
-     }
-   ];
-
-   this.currentIndex = 0;
-   this.currentQuestion = this.questions[this.currentIndex];
+ arrQue:Array<Question>=[];
+ constructor(public queSer:QuestionServiceService){
+ this.currentIn = 0;
+ this.currentQue = this.arrQue[this.currentIn];
   }
   
   next(){
-    this.currentIndex++;
-    this.currentQuestion = this.questions[this.currentIndex];
+    this.currentIn++;
+    this.currentQue = this.arrQue[this.currentIn];
   }
 
   submit(){
-    this.buttonName = "Play Again?";
-    if (this.currentIndex + 1 == this.questions.length){
+    this.buttonName = "Start Test Again?";
+    if (this.currentIn + 1 == this.arrQue.length){
       this.complete = true;
-      this.begin = false;
-      this.score = 0;
+      this.start_test = false;
+      this.marks = 0;
       this.noAnswer = 0;
-      this.questions.map(x => {
+      this.arrQue.map(x => {
         if (x.selected != 0){
           if (x.selected == x.answer) {
-            this.score++;
+            this.marks++;
           }
         }
         else {
@@ -112,9 +52,15 @@ export class AppComponent  {
 
   start(){
     this.complete = false;
-    this.currentIndex = 0;
-    this.currentQuestion = this.questions[this.currentIndex];
-    this.begin = true;
+    this.currentIn = 0;
+    this.currentQue = this.arrQue[this.currentIn];
+    this.start_test = true;
+  }
+
+  ngOnInit(): void {
+    this.queSer.loadJsonData()
+    .subscribe(data=>this.arrQue=data,error=>console.log(error));
+    console.log(this.arrQue)
   }
 
 }
