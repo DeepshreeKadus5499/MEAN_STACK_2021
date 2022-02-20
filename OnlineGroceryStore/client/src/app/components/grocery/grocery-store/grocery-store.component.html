@@ -1,0 +1,47 @@
+<!-- <ng-template [ngIf]="groceries">
+  <div class="top">
+    <pagination-controls
+      (pageChange)="pageChanged($event)"
+      maxSize="{{maxPages}}"
+      directionLinks="true"
+      autoHide="true"
+      responsive="true"
+      previousLabel="Previous"
+      nextLabel="Next"
+      screenReaderPaginationLabel="Pagination"
+      screenReaderPageLabel="page"
+      screenReaderCurrentLabel="You're on page">
+    </pagination-controls>
+  </div>
+  <div class="groceries-store">
+    <app-grocery For="let grocery of groceries | paginate: {
+    itemsPerPage: pageSize,
+    currentPage: currentPage,
+    totalItems: total }" [grocery]="grocery"></app-grocery>
+  </div>
+  <div *ngIf="groceries.length === 0" class="no-results">
+    <img src="https://i.imgur.com/KRVihMq.png" alt="no-item-found">
+  </div>
+  <div class="bottom">
+    <pagination-controls
+      (pageChange)="pageChanged($event)"
+      maxSize="{{maxPages}}"
+      directionLinks="true"
+      autoHide="true"
+      responsive="true"
+      previousLabel="Previous"
+      nextLabel="Next"
+      screenReaderPaginationLabel="Pagination"
+      screenReaderPageLabel="page"
+      screenReaderCurrentLabel="You're on page">
+    </pagination-controls>
+  </div>
+</ng-template> -->
+
+<h1>Welcome to our Grocery Store</h1>
+<div *ngIf="groceries" class="groceries-home">
+  <!-- <div class="panel">
+    <h2>Most Purchased Groceries</h2>
+  </div> -->
+  <app-grocery *ngFor="let grocery of groceries" [grocery]="grocery"></app-grocery>
+</div>

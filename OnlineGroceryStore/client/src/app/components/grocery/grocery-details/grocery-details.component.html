@@ -1,0 +1,41 @@
+<div *ngIf="grocery" class="row grocery-details">
+  <div class="col-1">
+    <img width="300" height="600" src="{{grocery.cover}}" alt="grocery-cover" />
+  </div>
+  <div class="col-7 grocery-info">
+    <h3>{{grocery.name}}</h3>
+    <span class="fa fa-star {{stars[0]}}" (click)="rateGrocery(1)" (mouseenter)="calcRating(1)" (mouseleave)="resetRating()"></span>
+    <span class="fa fa-star {{stars[1]}}" (click)="rateGrocery(2)" (mouseenter)="calcRating(2)" (mouseleave)="resetRating()"></span>
+    <span class="fa fa-star {{stars[2]}}" (click)="rateGrocery(3)" (mouseenter)="calcRating(3)" (mouseleave)="resetRating()"></span>
+    <span class="fa fa-star {{stars[3]}}" (click)="rateGrocery(4)" (mouseenter)="calcRating(4)" (mouseleave)="resetRating()"></span>
+    <span class="fa fa-star {{stars[4]}}" (click)="rateGrocery(5)" (mouseenter)="calcRating(5)" (mouseleave)="resetRating()"></span>
+    <p>based on {{grocery.ratedCount}} ratings</p>
+    <p>{{grocery.comments.length}} comments</p>
+    <p>Brand: {{grocery.brand}}</p>
+    <p>Category: {{grocery.category}}</p>
+    <p>MFG Year: {{grocery.mfgyear}}</p>
+    <p>ProductId: {{grocery.productid}}</p>
+    <p>Quantity: {{grocery.quantity}}</p>
+    <p class="grocery-description">Description: {{grocery.description}}</p>
+    <h2>Price: {{grocery.price}} &#x24;</h2>
+    <ng-template [ngIf]="isLogged">
+      <button class="btn btn-success" (click)="buyGrocery()" [disabled]="isBought">Buy Grocery</button>
+      <button class="btn btn-secondary" (click)="addToFavorites()" [disabled]="isAdded">Add to favourites</button>
+    </ng-template>
+    <ng-template [ngIf]="isAdmin">
+      <div id="admin-panel">
+        <a class="btn btn-warning" routerLink="/grocery/edit/{{grocery._id}}">Edit Grocery</a>
+        <a class="btn btn-danger" routerLink="/grocery/delete/{{grocery._id}}">Delete Grocery</a>
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="!isLogged">
+      <button class="btn btn-secondary" (click)="login()">Login to Buy, Rate and Comment</button>
+    </ng-template>
+  </div>
+</div>
+<ng-template [ngIf]="grocery">
+  <app-comment [groceryId]="groceryId" [isLogged]="isLogged" [isAdmin]="isAdmin" [userId]="userId"></app-comment>
+</ng-template>
+<div [hidden]="grocery" class="no-results">
+  <img src="https://i.imgur.com/KRVihMq.png" alt="no-item-found">
+</div>

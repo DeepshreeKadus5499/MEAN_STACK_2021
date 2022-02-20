@@ -1,0 +1,39 @@
+.grocery-details {
+  width: 100%;
+}
+
+.grocery-details img {
+  border-radius: 5px;
+}
+
+.grocery-info {
+  padding: 30px;
+  background-color: #313532;
+  border-radius: 15px;
+}
+
+.grocery-info a {
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.grocery-info button {
+  margin: 10px 10px 10px 0;
+}
+
+.grocery-description {
+  text-align: justify;
+}
+
+.grocery-details div {
+  margin: 50px auto;
+  text-align: left;
+}
+
+.checked {
+  color: orange;
+}
+
+#admin-panel {
+  margin: 0;
+}

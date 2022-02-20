@@ -1,0 +1,19 @@
+<h1>Welcome to our Grocery Store</h1>
+<div *ngIf="mostPurchasedGroceries" class="groceries-home">
+  <div class="panel">
+    <h2>Most Purchased Groceries</h2>
+  </div>
+  <app-grocery *ngFor="let grocery of mostPurchasedGroceries" [grocery]="grocery"></app-grocery>
+</div>
+<div *ngIf="bestRatedGroceries" class="groceries-home">
+  <div class="panel">
+    <h2>Best Rated Groceries</h2>
+  </div>
+  <app-grocery *ngFor="let grocery of bestRatedGroceries" [grocery]="grocery"></app-grocery>
+</div>
+<div *ngIf="newestGroceries" class="groceries-home">
+  <div class="panel">
+    <h2>Newest Groceries</h2>
+  </div>
+  <app-grocery *ngFor="let grocery of newestGroceries" [grocery]="grocery"></app-grocery>
+</div>

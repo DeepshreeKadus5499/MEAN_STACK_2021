@@ -1,0 +1,7 @@
+<div *ngIf="grocery" class="grocery-card">
+  <img src="{{grocery.cover}}" alt="grocery-cover">
+  <h5>{{grocery.name}}</h5>
+  <h6>{{grocery.brand}}</h6>
+  <p >{{grocery.price}} &#36;</p>
+  <a class="btn btn-primary" routerLink="/grocery/details/{{grocery._id}}">View Details</a>
+</div>

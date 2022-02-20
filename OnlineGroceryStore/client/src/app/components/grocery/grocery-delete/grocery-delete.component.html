@@ -1,0 +1,26 @@
+<div class="form delete-grocery-form">
+  <form #formDir="ngForm" [formGroup]="deleteGroceryForm" (ngSubmit)="onSubmit()">
+    <h1>Delete Grocery</h1>
+    <div class="form-field">
+      <input type="text" class="name" name="name" placeholder="Grocery Name" formControlName="name" disabled />
+      <i class="fas fa-grocery" aria-hidden="true"></i>
+    </div>
+    <div class="form-field">
+      <input type="text" class="brand" name="brand" placeholder="Grocery Brand" formControlName="brand" disabled />
+      <i class="fas fa-user" aria-hidden="true"></i>
+    </div>
+    <div class="form-field">
+      <input type="text" class="category" name="category" placeholder="Grocery Category" formControlName="category" disabled />
+      <i class="fas fa-clipboard" aria-hidden="true"></i>
+    </div>
+    <div class="form-field">
+      <textarea class="description" name="description" placeholder="Grocery description" formControlName="description" cols="30" rows="3" disabled></textarea>
+      <i class="fas fa-pen" aria-hidden="true"></i>
+    </div>
+    <div class="form-field">
+      <input type="number" class="price" name="price" placeholder="Grocery Price" formControlName="price" step="0.1" disabled />
+      <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+    </div>
+    <input type="submit" class="submit delete-grocery" value="Confirm Delete" />
+  </form>
+</div>

@@ -1,0 +1,100 @@
+<div class="form create-grocery-form">
+  <form #formDir="ngForm" [formGroup]="createGroceryForm" (ngSubmit)="onSubmit()">
+    <h1>Add new Grocery</h1>
+    <div class="form-field">
+      <input type="text" class="title" name="name" placeholder="Grocery Name" formControlName="name" />
+      <i class="fas fa-grocery" aria-hidden="true"></i>
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="input-error">
+        <div *ngIf="name.errors.required">
+          Grocery name is required
+        </div>
+      </div>
+    </div>
+    <div class="form-field">
+      <input type="text" class="author" name="brand" placeholder="Grocery Brand" formControlName="brand" />
+      <i class="fas fa-user" aria-hidden="true"></i>
+      <div *ngIf="brand.invalid && (brand.dirty || brand.touched)" class="input-error">
+        <div *ngIf="brand.errors.required">
+          Grocery brand is required
+        </div>
+      </div>
+    </div>
+    <div class="form-field">
+      <input type="text" class="genre" name="category" placeholder="Grocery Genre" formControlName="category" />
+      <i class="fas fa-clipboard" aria-hidden="true"></i>
+      <div *ngIf="category.invalid && (category.dirty || category.touched)" class="input-error">
+        <div *ngIf="category.errors.required">
+          Grocery category is required
+        </div>
+      </div>
+    </div>
+    <div class="form-field">
+      <input type="number" class="year" name="mfgyear" placeholder="Grocery Relase Year" formControlName="mfgyear" step="1" />
+      <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+      <div *ngIf="mfgyear.invalid && (mfgyear.dirty || mfgyear.touched)" class="input-error">
+        <div *ngIf="mfgyear.errors.required">
+          Grocery MFG year is required
+        </div>
+      </div>
+    </div>
+    <div class="form-field">
+      <textarea class="description" name="description" placeholder="Grocery description" formControlName="description" cols="30" rows="10"></textarea>
+      <i class="fas fa-pen" aria-hidden="true"></i>
+      <div *ngIf="description.invalid && (description.dirty || description.touched)" class="input-error">
+        <div *ngIf="description.errors.required || description.errors.minlength ">
+          Grocery description must be more than 10 symbols long
+        </div>
+      </div>
+    </div>
+    <div class="form-field">
+      <input type="url" class="cover" name="cover" placeholder="Grocery Cover" formControlName="cover" />
+      <i class="fas fa-grocery-open" aria-hidden="true"></i>
+      <div *ngIf="cover.invalid && (cover.dirty || cover.touched)" class="input-error">
+        <div *ngIf="cover.errors.required">
+          Grocery cover is required
+        </div>
+        <div *ngIf="!cover.errors.isUrl">
+          Grocery cover must be a valid Url
+        </div>
+      </div>
+    </div>
+    <div class="form-field">
+      <input type="text" class="isbn" name="isbn" placeholder="Grocery ProductId" formControlName="productid" />
+      <i class="fas fas fa-barcode" aria-hidden="true"></i>
+      <div *ngIf="productid.invalid && (productid.dirty || productid.touched)" class="input-error">
+        <div *ngIf="productid.errors.required">
+          Grocery productid is required
+        </div>
+        <div *ngIf="!isbn.errors.isIsbn">
+          Please specify a valid productid
+        </div>
+      </div>
+    </div>
+    <div class="form-field">
+      <input type="number" class="pagesCount" name="quantity" placeholder="Grocery quantity" formControlName="quantity" step="1"
+      />
+      <i class="fas fa-file-alt" aria-hidden="true"></i>
+      <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)" class="input-error">
+        <div *ngIf="quantity.errors.required">
+          Grocery quantity is required
+        </div>
+        <div *ngIf="quantity.errors.min">
+          Quantity must be positive number
+        </div>
+      </div>
+    </div>
+    <div class="form-field">
+      <input type="number" class="price" name="price" placeholder="Grocery Price" formControlName="price" step="0.1" />
+      <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+      <div *ngIf="price.invalid && (price.dirty || price.touched)" class="input-error">
+        <div *ngIf="price.errors.required">
+          Grocery price is required
+        </div>
+        <div *ngIf="price.errors.min">
+          Price must be positive number
+        </div>
+      </div>
+    </div>
+    <input type="submit" class="submit" value="Create Grocery" [disabled]="createGroceryForm.invalid" />
+  </form>
+</div>
