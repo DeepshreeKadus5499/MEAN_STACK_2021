@@ -3,7 +3,7 @@ const MONGOOSE = require('mongoose');
 MONGOOSE.Promise = global.Promise;
 
 module.exports = (config) => {
-    MONGOOSE.connect(config.connectionString);
+     MONGOOSE.connect(config.connectionString,{useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, autoIndex: false });
 
     let db = MONGOOSE.connection;
 
