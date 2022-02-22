@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+
+  mongo-db:
+
+    image: mongo
+
+    ports:
+
+      - '27017:27017'
+
+
+  server:
+
+    build: server
+
+    image: onlinegrocerystore/meanstack_backend
+
+    ports:
+      - '8000:8000'
+
+    links:
+
+      - mongo-db
+
+
+  client:
+
+    build: client
+
+    image: onlinegrocerystore/meanstack_frontend
+
+    ports:
+
+      - '4200:4200'
