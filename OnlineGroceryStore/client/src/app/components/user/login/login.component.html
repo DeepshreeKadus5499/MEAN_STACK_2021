@@ -18,7 +18,7 @@
           Password is required
         </div>
         <div *ngIf="password.errors.minlength || password.errors.maxlength">
-          Password must be between 3 and 16 symbols
+          Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters
         </div>
       </div>
     </div>

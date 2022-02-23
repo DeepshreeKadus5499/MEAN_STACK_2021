@@ -1,7 +1,7 @@
 {
-  "name": "book-store-client",
+  "name": "grocery-store-client",
   "version": "0.0.0",
-  "description": "Angular client for Book Store Web App",
+  "description": "Angular client for Grocery Store Web App",
   "author": "Jeliozver",
   "license": "MIT",
   "scripts": {
@@ -28,7 +28,7 @@
     "ngx-bootstrap": "^3.0.1",
     "ngx-pagination": "^3.2.0",
     "ngx-toastr": "^8.10.0",
-    "rxjs": "^6.0.0",
+    "rxjs": "6.0.0",
     "validator": "^10.6.0",
     "zone.js": "^0.8.26"
   },

@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 // Router
-import { Router } from '@angular/router';
+import { Router} from '@angular/router';
 
 // Services
 import { UserService } from '../../../core/services/user.service';
@@ -51,5 +51,7 @@ export class LoginComponent implements OnInit {
   get password(): AbstractControl {
     return this.loginForm.get('password');
   }
+
+
 
 }

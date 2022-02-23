@@ -45,7 +45,7 @@ function validateGroceryForm(payload) {
 
     if (!payload || isNaN(Number(payload.quantity)) || payload.quantity === '') {
         isFormValid = false;
-        errors.quantity = 'Please provide number of pages.';
+        errors.quantity = 'Please provide quantity.';
     }
 
     if (!payload || isNaN(Number(payload.price)) || Number(payload.price) < 0 || payload.pagesCount === '') {

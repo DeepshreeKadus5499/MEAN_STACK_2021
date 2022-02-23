@@ -2,15 +2,15 @@
   <form #formDir="ngForm" [formGroup]="deleteGroceryForm" (ngSubmit)="onSubmit()">
     <h1>Delete Grocery</h1>
     <div class="form-field">
-      <input type="text" class="name" name="name" placeholder="Grocery Name" formControlName="name" disabled />
+      <input type="text" class="title" name="name" placeholder="Grocery Name" formControlName="name" disabled />
       <i class="fas fa-grocery" aria-hidden="true"></i>
     </div>
     <div class="form-field">
-      <input type="text" class="brand" name="brand" placeholder="Grocery Brand" formControlName="brand" disabled />
+      <input type="text" class="author" name="brand" placeholder="Grocery Brand" formControlName="brand" disabled />
       <i class="fas fa-user" aria-hidden="true"></i>
     </div>
     <div class="form-field">
-      <input type="text" class="category" name="category" placeholder="Grocery Category" formControlName="category" disabled />
+      <input type="text" class="genre" name="category" placeholder="Grocery Category" formControlName="category" disabled />
       <i class="fas fa-clipboard" aria-hidden="true"></i>
     </div>
     <div class="form-field">
