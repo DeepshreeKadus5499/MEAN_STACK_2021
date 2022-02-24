@@ -36,14 +36,5 @@
     "coverage-node": "^6.1.0",
     "eslint": "^4.19.1",
     "mocha": "^9.2.1"
-  },
-  "nyc": {
-    "include": ["app.js","models/Cart.js","models/Comment.js",
-      "models/Grocery.js","models/Receipt.js","models/User.js",
-      "controllers/error.js",
-    "utilities","config"
-    ],
-    "exclude": ["server/models/Receipt.js"]
-
-}
+  }
 }
