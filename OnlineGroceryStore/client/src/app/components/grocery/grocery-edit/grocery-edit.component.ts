@@ -60,11 +60,11 @@ export class GroceryEditComponent implements OnInit {
       ]),
       'cover': new FormControl('', [
         Validators.required,
-        // isUrlValidator
+        isUrlValidator
       ]),
       'productid': new FormControl('', [
         Validators.required,
-        // isIsbnValidator
+        isIsbnValidator
       ]),
       'quantity': new FormControl('', [
         Validators.required,
